@@ -27,6 +27,7 @@ You can test the service functionality using Swagger-UI:
   - copy/paste the returned guid to use for *read* or *update* operations
 
 ## Known limitations
+  - there might be some additional comments, but the code should be easily readable
   - missing builders for domain objects
   - there is no logging at this moment except for Camel traces (which are quite enough anyway)
   - there is no persistence - the service is keeping all data in memory, but that can be easily changed by providing different implementation of *SubscriptionService*
