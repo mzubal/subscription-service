@@ -79,16 +79,16 @@ public class SubscriptionServiceRouteBuilder extends RouteBuilder {
 
         // Main routing of REST requests to camel routes
         rest("/subscription-service")
-            .put("/create/{" + CustomHeaders.HEADER_MESSAGE_TYPES + "}")
+            .put("/subscription/{" + CustomHeaders.HEADER_MESSAGE_TYPES + "}")
                 .description("The service creates new Subscription, taking comma separated list of message types (which are subscribed) as argument.")
                 .to(DIRECT_CREATE)
-            .get("/read/{" + CustomHeaders.HEADER_SUBSCRIPTION_GUID + "}")
+            .get("/subscription/{" + CustomHeaders.HEADER_SUBSCRIPTION_GUID + "}")
                 .description("For Subscription guid, the service returns all relevant messages along with cardinality of all returned types.")
                 .to(DIRECT_READ)
-            .post("/update/{" + CustomHeaders.HEADER_SUBSCRIPTION_GUID + "}/{" + CustomHeaders.HEADER_MESSAGE_TYPES + "}")
+            .post("/subscription/{" + CustomHeaders.HEADER_SUBSCRIPTION_GUID + "}/{" + CustomHeaders.HEADER_MESSAGE_TYPES + "}")
                 .description("For Subscription guid, the service updates the subscribed message types.")
                 .to(DIRECT_UPDATE)
-            .put("/post-message/{" + CustomHeaders.HEADER_MESSAGE_TYPE + "}/{" + CustomHeaders.HEADER_MESSAGE_CONTENT + "}")
+            .put("/message/{" + CustomHeaders.HEADER_MESSAGE_TYPE + "}/{" + CustomHeaders.HEADER_MESSAGE_CONTENT + "}")
                 .description("The service posts a new message, taking message type and content as argument.")
                 .to(DIRECT_POST_MESSAGE);
 
