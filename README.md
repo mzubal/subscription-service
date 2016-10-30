@@ -23,8 +23,8 @@ You can test the service functionality using Swagger-UI:
   - hit *Explore* button
   - click on the *subscription-service*
   - observe the API
-  - start with creating the Subscription using *create* operation
-  - copy/paste the returned guid to use for *read* or *update* operations
+  - start with creating the Subscription using *PUT* operation on subscription
+  - copy/paste the returned guid to use for *GET* or *POST* operations on subscription
 
 ## Known limitations
   - there might be some additional comments, but the code should be easily readable
